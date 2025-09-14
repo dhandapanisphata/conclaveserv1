@@ -6,6 +6,13 @@ const app = express();
 const PORT = process.env.PORT || 7000;
 
 app.use(cors());
+const corsOptions = {
+  origin: ["https://crm.megacrane.acculermedia.in", "http://localhost:3000"],
+  credentials: true,
+  methods: ["GET", "POST", "PATCH", "PUT", "DELETE"],
+  allowedHeaders: ["Content-Type", "Authorization"],
+};
+app.use(cors(corsOptions));
 app.use(express.json());
 
 app.post('/submit-to-google-sheet', async (req, res) => {
