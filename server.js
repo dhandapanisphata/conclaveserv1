@@ -18,7 +18,7 @@ app.use(express.json());
 app.post('/submit-to-google-sheet', async (req, res) => {
   try {
     const response = await axios.post(
-      'https://script.google.com/macros/s/AKfycbzZy5wNfAH-ExUZRMjmtgZpV-kdtTodBsODZEsX8I1-tstuFSm4OGXG6aC-P7QMUr2Jdg/exec',
+      'https://script.google.com/macros/s/AKfycbw2LiZtDSysqweHZzVFLHdFeP6KLL6r79wqkZZtlvgFxV6yQeZUSiGhkn_daxpxfZhudQ/exec',
       req.body
     );
     res.status(200).send(response.data);
